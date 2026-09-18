@@ -1,0 +1,19 @@
+[project]
+name = "statarb"
+version = "0.1.0"
+description = "Statistical arbitrage / pairs trading research pipeline: cointegration, spread z-score, backtesting, walk-forward validation."
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.3",
+    "numpy>=2.2",
+    "statsmodels>=0.15",
+    "yfinance>=1.7",
+    "matplotlib>=3.10",
+    "scipy>=1.15",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=9.1"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
