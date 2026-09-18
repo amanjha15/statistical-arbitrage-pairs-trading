@@ -4,7 +4,7 @@ Implements the pipeline stages: strict time-ordered signal -> position,
 risk-based position sizing, transaction costs/slippage, and the resulting
 equity curve. All position/size values used to compute P&L at time t are
 taken from t-1, so no future information leaks into a historical decision
-(see notes section 18-19, look-ahead bias).
+(look-ahead bias).
 """
 
 from __future__ import annotations
@@ -30,7 +30,7 @@ def inverse_vol_sizing(
     vol_window: int,
     target_dollar_risk: float,
 ) -> pd.Series:
-    """Risk-based sizing: size ∝ 1 / rolling spread volatility (notes section 30).
+    """Risk-based sizing: size ∝ 1 / rolling spread volatility.
 
     Returns the number of "spread units" to hold when a signal is active,
     where one spread unit = long 1 share of A, short beta shares of B.

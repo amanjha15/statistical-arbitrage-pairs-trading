@@ -1,6 +1,6 @@
 """Hedge-ratio estimation, spread construction, and stationarity/cointegration tests.
 
-Implements the core relationship from the notes:
+Implements the core relationship:
 
     A_t = alpha + beta * B_t + eps_t
     S_t = A_t - alpha - beta * B_t

@@ -1,4 +1,4 @@
-"""Out-of-sample and walk-forward validation (notes section 21).
+"""Out-of-sample and walk-forward validation.
 
 Splits history into a development/training window and one or more unseen
 test windows, freezing strategy rules (thresholds, sizing) after the

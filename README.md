@@ -65,7 +65,7 @@ Tests run entirely offline against a synthetic cointegrated pair
 (`statarb.data.synthetic_cointegrated_pair`), so they don't depend on
 network access or Yahoo Finance availability.
 
-## Notes on methodology
+## Methodology
 
 - **No look-ahead**: rolling beta, spread mean/std are computed from a
   trailing window and shifted by one period before being used to size or
