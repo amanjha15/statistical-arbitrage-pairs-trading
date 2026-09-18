@@ -59,7 +59,7 @@ def adf_test(series: pd.Series, regression: str = "c") -> ADFResult:
     H0: series has a unit root (non-stationary), H1: stationary/mean-reverting.
     """
     stat, pvalue, used_lag, n_obs, crit, _ = adfuller(
-        series.dropna().values, regression=regression, autolag="AIC"
+        series.dropna().values, regression=regression, autolag="AIC", result_object=False
     )
     return ADFResult(
         statistic=float(stat),

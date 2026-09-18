@@ -21,7 +21,7 @@ def sharpe_ratio(
     """
     excess = returns - risk_free
     sigma = excess.std()
-    if sigma == 0 or np.isnan(sigma):
+    if np.isnan(sigma) or sigma < 1e-12:
         return 0.0
 
     sharpe = excess.mean() / sigma
