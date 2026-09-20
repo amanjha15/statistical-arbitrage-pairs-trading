@@ -70,8 +70,12 @@ network access or Yahoo Finance availability.
 - **No look-ahead**: rolling beta, spread mean/std are computed from a
   trailing window and shifted by one period before being used to size or
   signal a trade at time *t*.
-- **Position sizing**: inverse to rolling spread volatility (risk-based),
-  scaled to a target dollar risk per trade.
+- **Position sizing**: inverse to rolling spread volatility, targeting a
+  fraction of *current equity* per trade (not a fixed dollar amount), and
+  hard-capped at a maximum gross leverage multiple of equity. The cap is
+  computed sequentially against the realized equity path, since a
+  leverage limit checked only against starting capital would silently
+  drift as equity compounds.
 - **Costs**: transaction costs are charged in basis points of traded gross
   notional whenever the position size changes, not just on binary entry/exit.
 - **Walk-forward**: the hedge ratio and cointegration test are estimated
